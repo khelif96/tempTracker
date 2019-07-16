@@ -66,7 +66,7 @@ Temp.findOne({},{},{ sort: { 'createdAt' : -1 } }, (err,statsBucket) => {
       });
       statsBucket.count += 1;
       const query = {_id: statsBucket._id}
-      Temp.update(query, statsBucket, (error) => {
+      Temp.updateOne(query, statsBucket, (error) => {
         if(!error){ res.status(201).send("Updated bucket");}else{
           res.status(400).send("Server Error while Saving");
 
