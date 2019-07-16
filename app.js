@@ -64,4 +64,5 @@ var server = app.listen(port, () => {
 }).on('error', () => {
   console.log('Server through an exception when trying to listen on port %d', port);
   console.log('Is there anything running on port %d ?', port);
+  process.exit(1);
 });
